@@ -371,15 +371,26 @@ document.querySelectorAll('.case-card').forEach(el => caseObserver.observe(el));
    SMOOTH ANCHOR SCROLL
    ===================== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
+  anchor.addEventListener('click', function (e) {
+    const href   = this.getAttribute('href');
+    const target = document.querySelector(href);
     if (!target) return;
+
     e.preventDefault();
-    const offset = 80;
-    window.scrollTo({
-      top: target.getBoundingClientRect().top + window.scrollY - offset,
-      behavior: 'smooth',
-    });
+
+    const navHeight = 80;
+    const top       = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+    // scrollTo with smooth is not supported on iOS < 15.4
+    // Fall back to instant jump when the API is unavailable
+    try {
+      window.scrollTo({ top, behavior: 'smooth' });
+    } catch (_) {
+      window.scrollTo(0, top);
+    }
+
+    // Close mobile menu if open
+    document.getElementById('mobileMenu').classList.remove('open');
   });
 });
 
