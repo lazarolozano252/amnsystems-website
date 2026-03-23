@@ -305,7 +305,6 @@ img { display: block; max-width: 100%; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
   padding: 120px 24px 80px;
 }
 
@@ -527,7 +526,6 @@ img { display: block; max-width: 100%; }
   padding: 36px 30px;
   position: relative;
   transition: var(--transition);
-  overflow: hidden;
   opacity: 0;
   transform: translateY(24px);
 }
@@ -663,7 +661,6 @@ img { display: block; max-width: 100%; }
   opacity: 0;
   transform: translateY(28px);
   position: relative;
-  overflow: hidden;
 }
 .case-card::after {
   content: '';
@@ -864,7 +861,6 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   position: relative;
-  overflow: hidden;
 }
 .cases__cta::before {
   content: '';
