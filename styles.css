@@ -420,6 +420,7 @@ img { display: block; max-width: 100%; }
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  pointer-events: none; /* decorative only, must not intercept taps */
 }
 .hero__scroll span {
   display: block;
@@ -1166,6 +1167,10 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
+  /* The container itself must NOT intercept taps — only the actual
+     buttons inside do. Without this, the invisible chat-panel area
+     blocks touch events on the page content behind it. */
+  pointer-events: none;
 }
 
 /* =====================
@@ -1177,10 +1182,12 @@ img { display: block; max-width: 100%; }
   align-items: flex-end;
   gap: 0;
   position: relative;
+  pointer-events: none; /* inherited from float-stack; panel/toggle restore as needed */
 }
 
 /* ── Toggle button ── */
 .chat-toggle {
+  pointer-events: auto; /* restore: this is a real button */
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1242,6 +1249,13 @@ img { display: block; max-width: 100%; }
 
 /* ── Panel ── */
 .chat-panel {
+  /* position: absolute takes the panel OUT of the flex flow so it never
+     inflates the float-stack's bounding box when hidden. Without this,
+     the invisible 520px-tall panel makes float-stack cover most of the
+     screen, blocking touch events on all page content behind it. */
+  position: absolute;
+  bottom: calc(100% + 10px);
+  right: 0;
   width: 360px;
   background: var(--bg3);
   border: 1px solid rgba(30,144,255,.25);
@@ -1250,7 +1264,6 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin-bottom: 10px;
   /* closed state */
   opacity: 0;
   transform: translateY(12px) scale(.97);
@@ -1499,6 +1512,7 @@ img { display: block; max-width: 100%; }
    ===================== */
 .wa-float {
   position: static;
+  pointer-events: auto; /* restore: this is a real link */
   display: flex;
   align-items: center;
   gap: 12px;
