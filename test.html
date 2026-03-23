@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test anchor links — iOS Safari</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #050810;
+      color: #fff;
+    }
+
+    /* ── NAV fija con los 3 botones ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: #0d1526;
+      border-bottom: 1px solid rgba(30,144,255,.3);
+      display: flex;
+      gap: 12px;
+      padding: 16px 24px;
+      z-index: 10;
+    }
+
+    nav a {
+      display: inline-block;
+      background: #1E90FF;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    nav a:active { opacity: 0.8; }
+
+    /* ── Secciones ── */
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      scroll-margin-top: 72px;
+    }
+
+    #seccion-1 { background: #0a1a3a; }
+    #seccion-2 { background: #0a2a1a; }
+    #seccion-3 { background: #2a0a1a; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#seccion-1">Sección 1</a>
+    <a href="#seccion-2">Sección 2</a>
+    <a href="#seccion-3">Sección 3</a>
+  </nav>
+
+  <section id="seccion-1">✅ Sección 1</section>
+  <section id="seccion-2">✅ Sección 2</section>
+  <section id="seccion-3">✅ Sección 3</section>
+
+</body>
+</html>
