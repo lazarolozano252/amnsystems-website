@@ -24,10 +24,16 @@
     if (progress < 1) {
       requestAnimationFrame(tick);
     } else {
-      // Bar full → short pause → fade out
+      // Bar full → short pause → fade out → remove from DOM entirely
       setTimeout(() => {
         loader.classList.add('hidden');
         document.body.classList.remove('loading');
+        // After CSS transition ends, remove loader from DOM so it can
+        // never block touch events on mobile (iOS Safari ignores pointer-events
+        // on fixed elements during transitions in some versions)
+        loader.addEventListener('transitionend', () => {
+          loader.style.display = 'none';
+        }, { once: true });
       }, HIDE_DELAY);
     }
   }

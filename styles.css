@@ -88,6 +88,13 @@ body.loading { overflow: hidden; }
    ===================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ── Mobile touch fixes ── */
+a, button, [role="button"], input, select, textarea, label {
+  touch-action: manipulation;       /* removes 300ms iOS tap delay */
+  -webkit-tap-highlight-color: transparent; /* removes grey flash on tap */
+}
+button { cursor: pointer; }
+
 :root {
   --blue:       #1E90FF;
   --blue-bright:#3FAAFF;
@@ -303,6 +310,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none; /* entire bg layer is non-interactive */
 }
 
 #particleCanvas {
