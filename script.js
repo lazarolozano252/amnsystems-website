@@ -258,7 +258,8 @@ mobile.querySelectorAll('a').forEach(link => {
   }
 
   // ── Mouse interaction — nodes nudge away ─────────────────
-  canvas.addEventListener('mousemove', e => {
+  // Listener on hero section (not canvas) because canvas has pointer-events:none
+  document.querySelector('.hero').addEventListener('mousemove', e => {
     const rect = canvas.getBoundingClientRect();
     const mx = e.clientX - rect.left;
     const my = e.clientY - rect.top;
@@ -626,16 +627,18 @@ form.addEventListener('submit', async e => {
 })();
 
 /* =====================
-   CARD TILT — subtle 3D
+   CARD TILT — subtle 3D (desktop/mouse only)
    ===================== */
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect   = card.getBoundingClientRect();
-    const x      = (e.clientX - rect.left) / rect.width  - 0.5;
-    const y      = (e.clientY - rect.top)  / rect.height - 0.5;
-    card.style.transform = `translateY(-4px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg)`;
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x    = (e.clientX - rect.left) / rect.width  - 0.5;
+      const y    = (e.clientY - rect.top)  / rect.height - 0.5;
+      card.style.transform = `translateY(-4px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+}
