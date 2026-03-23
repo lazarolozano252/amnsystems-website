@@ -28,12 +28,12 @@
       setTimeout(() => {
         loader.classList.add('hidden');
         document.body.classList.remove('loading');
-        // After CSS transition ends, remove loader from DOM so it can
-        // never block touch events on mobile (iOS Safari ignores pointer-events
-        // on fixed elements during transitions in some versions)
-        loader.addEventListener('transitionend', () => {
-          loader.style.display = 'none';
-        }, { once: true });
+        // Remove loader from DOM after fade — belt-and-suspenders:
+        // transitionend fires normally, timeout is backup for iOS Safari
+        // where transitionend can be skipped when tab is in background.
+        const hideFn = () => { loader.style.display = 'none'; };
+        loader.addEventListener('transitionend', hideFn, { once: true });
+        setTimeout(hideFn, 800); // 0.7s transition + 100ms buffer
       }, HIDE_DELAY);
     }
   }
@@ -368,28 +368,14 @@ const caseObserver = new IntersectionObserver(entries => {
 document.querySelectorAll('.case-card').forEach(el => caseObserver.observe(el));
 
 /* =====================
-   SMOOTH ANCHOR SCROLL
+   ANCHOR LINKS — native scroll, close mobile menu
    ===================== */
+// Do NOT call e.preventDefault() on anchor links — let the browser
+// handle scrolling natively. CSS scroll-behavior:smooth + scroll-margin-top
+// already cover smooth scroll and navbar offset on all browsers.
+// This listener only closes the mobile menu when a link is tapped.
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const href   = this.getAttribute('href');
-    const target = document.querySelector(href);
-    if (!target) return;
-
-    e.preventDefault();
-
-    const navHeight = 80;
-    const top       = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-
-    // scrollTo with smooth is not supported on iOS < 15.4
-    // Fall back to instant jump when the API is unavailable
-    try {
-      window.scrollTo({ top, behavior: 'smooth' });
-    } catch (_) {
-      window.scrollTo(0, top);
-    }
-
-    // Close mobile menu if open
+  anchor.addEventListener('click', function () {
     document.getElementById('mobileMenu').classList.remove('open');
   });
 });
