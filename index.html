@@ -3,611 +3,568 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AMN Systems — Inteligencia Artificial para el Futuro</title>
+  <title>AMN Systems — Inteligencia Artificial para Empresas</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- LOADING SCREEN -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader__inner">
-      <div class="loader__logo">AMN<span>Systems</span></div>
-      <p class="loader__tagline">Inteligencia Artificial para el Futuro</p>
-      <div class="loader__bar-track">
-        <div class="loader__bar-fill" id="loaderBar"></div>
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <div class="loader__logo">AMN<span>Systems</span></div>
+    <div class="loader__track"><div class="loader__fill" id="loaderBar"></div></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+  <div class="nav__inner">
+    <a href="#inicio" class="nav__logo">AMN<span>Systems</span></a>
+    <ul class="nav__links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#casos">Casos de éxito</a></li>
+      <li><a href="#por-que">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="btn btn--nav">Agenda una llamada</a>
+    <button class="nav__burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="#servicios">Servicios</a>
+    <a href="#casos">Casos de éxito</a>
+    <a href="#por-que">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#contacto" class="btn btn--primary" style="margin-top:8px">Agenda una llamada</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero__inner">
+    <div class="hero__label"><span class="hero__dot"></span>Agencia de Inteligencia Artificial</div>
+    <h1 class="hero__title">
+      Construimos sistemas de IA<br class="br-lg"/>
+      que <em>multiplican</em> el rendimiento<br class="br-lg"/>
+      de tu empresa
+    </h1>
+    <p class="hero__sub">
+      Automatización inteligente, modelos a medida y consultoría estratégica
+      para empresas que quieren escalar con tecnología de punta.
+    </p>
+    <div class="hero__actions">
+      <a href="#servicios" class="btn btn--primary">Ver servicios</a>
+      <a href="#contacto" class="btn btn--outline">Habla con nosotros →</a>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <div class="hero__stat-num"><span class="hero__stat-n" data-target="150">0</span><span class="hero__stat-sfx">+</span></div>
+        <span class="hero__stat-l">Proyectos entregados</span>
       </div>
-      <div class="loader__dots">
-        <span></span><span></span><span></span>
+      <div class="hero__divider"></div>
+      <div class="hero__stat">
+        <div class="hero__stat-num"><span class="hero__stat-n" data-target="98">0</span><span class="hero__stat-sfx">%</span></div>
+        <span class="hero__stat-l">Satisfacción del cliente</span>
+      </div>
+      <div class="hero__divider"></div>
+      <div class="hero__stat">
+        <div class="hero__stat-num"><span class="hero__stat-n" data-target="40">0</span><span class="hero__stat-sfx">%</span></div>
+        <span class="hero__stat-l">Reducción de costos</span>
+      </div>
+    </div>
+    <div class="hero__industries">
+      <span class="hero__ind-label">Industrias que confían en nosotros</span>
+      <div class="hero__ind-tags">
+        <span>Fintech</span><span>Retail</span><span>Manufactura</span>
+        <span>Salud</span><span>Logística</span><span>SaaS</span>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- NAV -->
-  <nav class="nav" id="navbar">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo">AMN<span>Systems</span></a>
-      <ul class="nav__links">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#casos">Casos de éxito</a></li>
-        <li><a href="#por-que">Por qué nosotros</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-      <a href="#contacto" class="btn btn--sm">Hablemos</a>
-      <button class="nav__burger" id="burger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav__mobile" id="mobileMenu">
-      <a href="#servicios">Servicios</a>
-      <a href="#casos">Casos de éxito</a>
-      <a href="#por-que">Por qué nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
+<!-- SERVICIOS -->
+<section class="services section" id="servicios">
+  <div class="container">
+    <div class="section-label">Servicios</div>
+    <h2 class="section-title">Soluciones de IA a medida</h2>
+    <p class="section-sub">Cada empresa es única. Construimos sistemas que se adaptan exactamente a tus objetivos y procesos.</p>
+    <div class="services__grid">
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero__content">
-      <div class="hero__badge">
-        <span class="pulse"></span> Tecnología de vanguardia
+      <div class="svc-card reveal">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+        </div>
+        <h3>Automatización Inteligente</h3>
+        <p>Agentes autónomos y flujos de trabajo que eliminan tareas repetitivas. Tus equipos se enfocan en lo que importa.</p>
+        <ul>
+          <li>Agentes IA disponibles 24/7</li>
+          <li>Integración con tus sistemas</li>
+          <li>RPA potenciado con LLMs</li>
+        </ul>
+        <a href="#contacto" class="svc-card__cta">Saber más →</a>
       </div>
-      <h1 class="hero__title">
-        Transformamos negocios<br />
-        con <span class="gradient-text">Inteligencia Artificial</span>
-      </h1>
-      <p class="hero__subtitle">
-        Diseñamos e implementamos soluciones de IA que automatizan procesos,<br class="br-desktop" />
-        reducen costos y escalan tu empresa al siguiente nivel.
-      </p>
-      <div class="hero__actions">
-        <a href="#servicios" class="btn btn--primary">Explorar servicios</a>
-        <a href="#contacto" class="btn btn--ghost">Agendar consulta →</a>
+
+      <div class="svc-card svc-card--featured reveal">
+        <div class="svc-card__badge">Más solicitado</div>
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <h3>Consultoría Estratégica en IA</h3>
+        <p>Analizamos tu empresa, identificamos oportunidades de alto impacto y diseñamos una hoja de ruta clara para adoptar IA.</p>
+        <ul>
+          <li>Auditoría de procesos y datos</li>
+          <li>Estrategia de adopción de IA</li>
+          <li>Capacitación de equipos</li>
+        </ul>
+        <a href="#contacto" class="svc-card__cta">Saber más →</a>
       </div>
-      <div class="hero__stats">
-        <div class="stat">
-          <span class="stat__number" data-target="150">0</span><span>+</span>
-          <span class="stat__label">Proyectos entregados</span>
+
+      <div class="svc-card reveal">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
         </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__number" data-target="98">0</span><span>%</span>
-          <span class="stat__label">Satisfacción del cliente</span>
-        </div>
-        <div class="stat__divider"></div>
-        <div class="stat">
-          <span class="stat__number" data-target="40">0</span><span>%</span>
-          <span class="stat__label">Reducción de costos</span>
-        </div>
+        <h3>Desarrollo de Soluciones IA</h3>
+        <p>Modelos personalizados, APIs inteligentes, chatbots avanzados y sistemas de procesamiento de lenguaje natural.</p>
+        <ul>
+          <li>Modelos y fine-tuning custom</li>
+          <li>Chatbots y asistentes virtuales</li>
+          <li>Análisis predictivo y NLP</li>
+        </ul>
+        <a href="#contacto" class="svc-card__cta">Saber más →</a>
       </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        </div>
+        <h3>Integración Empresarial</h3>
+        <p>Conectamos IA con tu ERP, CRM y plataformas existentes. Sin fricción, con total seguridad y cumplimiento normativo.</p>
+        <ul>
+          <li>APIs y webhooks a medida</li>
+          <li>Sincronización en tiempo real</li>
+          <li>Cumplimiento GDPR / ISO</li>
+        </ul>
+        <a href="#contacto" class="svc-card__cta">Saber más →</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3>Análisis de Datos con IA</h3>
+        <p>Dashboards inteligentes, reportes automáticos y modelos predictivos que convierten datos en decisiones de negocio.</p>
+        <ul>
+          <li>Business Intelligence avanzado</li>
+          <li>Modelos de forecasting</li>
+          <li>Detección de anomalías</li>
+        </ul>
+        <a href="#contacto" class="svc-card__cta">Saber más →</a>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3>IA Generativa para Empresas</h3>
+        <p>LLMs desplegados en infraestructura privada. Genera contenido, automatiza atención al cliente y acelera la innovación.</p>
+        <ul>
+          <li>LLMs en infraestructura privada</li>
+          <li>Generación de contenido a escala</li>
+          <li>Asistentes internos de empresa</li>
+        </ul>
+        <a href="#contacto" class="svc-card__cta">Saber más →</a>
+      </div>
+
     </div>
-    <div class="hero__scroll">
-      <span></span>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SERVICIOS -->
-  <section class="services" id="servicios">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-tag">Lo que hacemos</p>
-        <h2 class="section-title">Soluciones de IA a medida</h2>
-        <p class="section-sub">Cada proyecto es único. Construimos sistemas inteligentes adaptados exactamente a los objetivos de tu empresa.</p>
+<!-- MÉTRICAS -->
+<section class="metrics">
+  <div class="container">
+    <div class="metrics__grid">
+      <div class="metrics__item">
+        <div class="metrics__num"><span class="metrics__n" data-target="150">0</span><span class="metrics__sfx">+</span></div>
+        <span class="metrics__label">Proyectos entregados</span>
       </div>
-      <div class="services__grid">
-
-        <div class="card" data-delay="0">
-          <div class="card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 24h16M24 16l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.3"/>
-            </svg>
-          </div>
-          <h3>Automatización Inteligente</h3>
-          <p>Eliminamos tareas repetitivas con flujos automatizados que aprenden y mejoran solos. Desde RPA potenciado con IA hasta pipelines de datos autónomos.</p>
-          <ul class="card__list">
-            <li>Automatización de procesos con LLMs</li>
-            <li>Agentes autónomos 24/7</li>
-            <li>Integración con tus sistemas actuales</li>
-          </ul>
-          <a href="#contacto" class="card__link">Saber más →</a>
-        </div>
-
-        <div class="card card--featured" data-delay="100">
-          <div class="card__badge">Más solicitado</div>
-          <div class="card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
-              <path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="36" cy="12" r="5" fill="currentColor" opacity="0.3"/>
-            </svg>
-          </div>
-          <h3>Consultoría en IA</h3>
-          <p>Analizamos tu empresa, identificamos oportunidades de alto impacto y diseñamos una hoja de ruta clara para adoptar la IA de forma estratégica.</p>
-          <ul class="card__list">
-            <li>Auditoría de procesos y datos</li>
-            <li>Estrategia de adopción de IA</li>
-            <li>Capacitación de equipos</li>
-          </ul>
-          <a href="#contacto" class="card__link">Saber más →</a>
-        </div>
-
-        <div class="card" data-delay="200">
-          <div class="card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 6L6 16v16l18 10 18-10V16L24 6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M24 6v36M6 16l18 10 18-10" stroke="currentColor" stroke-width="2" stroke-linejoin="round" opacity="0.5"/>
-            </svg>
-          </div>
-          <h3>Desarrollo de Soluciones IA</h3>
-          <p>Construimos productos de IA desde cero: modelos personalizados, APIs inteligentes, chatbots avanzados y sistemas de visión computacional.</p>
-          <ul class="card__list">
-            <li>Modelos y fine-tuning custom</li>
-            <li>Chatbots y asistentes virtuales</li>
-            <li>Análisis predictivo y NLP</li>
-          </ul>
-          <a href="#contacto" class="card__link">Saber más →</a>
-        </div>
-
-        <div class="card" data-delay="300">
-          <div class="card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8 36V20l16-12 16 12v16H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <rect x="18" y="26" width="12" height="10" rx="1" stroke="currentColor" stroke-width="2"/>
-              <circle cx="24" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Integración Empresarial</h3>
-          <p>Conectamos herramientas de IA con tus plataformas existentes — ERP, CRM, e-commerce — sin fricciones y con total seguridad de datos.</p>
-          <ul class="card__list">
-            <li>APIs y webhooks personalizados</li>
-            <li>Sincronización de datos en tiempo real</li>
-            <li>Cumplimiento normativo (GDPR, ISO)</li>
-          </ul>
-          <a href="#contacto" class="card__link">Saber más →</a>
-        </div>
-
-        <div class="card" data-delay="400">
-          <div class="card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 36l8-12 6 8 6-10 4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <rect x="6" y="6" width="36" height="36" rx="3" stroke="currentColor" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>Análisis de Datos con IA</h3>
-          <p>Convertimos tus datos en decisiones. Dashboards inteligentes, reportes automatizados y modelos predictivos que anticipan el mercado.</p>
-          <ul class="card__list">
-            <li>Business Intelligence aumentado</li>
-            <li>Modelos de forecasting</li>
-            <li>Detección de anomalías</li>
-          </ul>
-          <a href="#contacto" class="card__link">Saber más →</a>
-        </div>
-
-        <div class="card" data-delay="500">
-          <div class="card__icon">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/>
-              <path d="M24 14V8M24 40v-6M14 24H8M40 24h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.4"/>
-            </svg>
-          </div>
-          <h3>IA Generativa para Empresas</h3>
-          <p>Implementamos modelos de lenguaje e imagen para crear contenido, generar código, automatizar atención al cliente y acelerar la innovación interna.</p>
-          <ul class="card__list">
-            <li>LLMs en infraestructura privada</li>
-            <li>Generación de contenido a escala</li>
-            <li>Asistentes internos de empresa</li>
-          </ul>
-          <a href="#contacto" class="card__link">Saber más →</a>
-        </div>
-
+      <div class="metrics__sep"></div>
+      <div class="metrics__item">
+        <div class="metrics__num"><span class="metrics__n" data-target="40">0</span><span class="metrics__sfx">%</span></div>
+        <span class="metrics__label">Reducción promedio de costos</span>
+      </div>
+      <div class="metrics__sep"></div>
+      <div class="metrics__item">
+        <div class="metrics__num"><span class="metrics__n" data-target="8">0</span><span class="metrics__sfx">x</span></div>
+        <span class="metrics__label">Retorno promedio de inversión</span>
+      </div>
+      <div class="metrics__sep"></div>
+      <div class="metrics__item">
+        <div class="metrics__num"><span class="metrics__n" data-target="98">0</span><span class="metrics__sfx">%</span></div>
+        <span class="metrics__label">Clientes satisfechos</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CASOS DE ÉXITO -->
-  <section class="cases" id="casos">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-tag">Resultados reales</p>
-        <h2 class="section-title">Casos de éxito</h2>
-        <p class="section-sub">Empresas que confiaron en AMN Systems y transformaron su operación con inteligencia artificial.</p>
-      </div>
-      <div class="cases__grid">
+<!-- CASOS DE ÉXITO -->
+<section class="cases section" id="casos">
+  <div class="container">
+    <div class="section-label">Resultados reales</div>
+    <h2 class="section-title">Casos de éxito</h2>
+    <p class="section-sub">Empresas que transformaron su operación con soluciones de IA de AMN Systems.</p>
+    <div class="cases__grid">
 
-        <!-- Caso 1 -->
-        <div class="case-card" data-delay="0">
-          <div class="case-card__header">
-            <div class="case-card__industry">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
-              Retail &amp; E-commerce
-            </div>
-            <span class="case-card__tag">Ahorro de tiempo</span>
+      <div class="case-card reveal">
+        <div class="case-card__top">
+          <div class="case-card__industry">Retail &amp; E-commerce</div>
+          <span class="badge badge--blue">Ahorro de tiempo</span>
+        </div>
+        <h3>Automatización del servicio al cliente</h3>
+        <p>Implementamos un asistente virtual con IA que resuelve el 87% de las consultas sin intervención humana, 24/7 en español e inglés.</p>
+        <div class="case-card__stats">
+          <div class="case-stat">
+            <strong>87%</strong>
+            <span>Consultas resueltas</span>
           </div>
-          <h3 class="case-card__title">Automatización del servicio al cliente para tienda online</h3>
-          <p class="case-card__desc">Implementamos un asistente virtual con IA que resuelve el 87% de las consultas sin intervención humana, disponible 24/7 en español e inglés.</p>
-          <div class="case-card__metrics">
-            <div class="metric">
-              <span class="metric__value">87<span class="metric__unit">%</span></span>
-              <span class="metric__label">Consultas resueltas por IA</span>
-            </div>
-            <div class="metric">
-              <span class="metric__value">14<span class="metric__unit">h</span></span>
-              <span class="metric__label">Ahorradas por día</span>
-            </div>
-            <div class="metric">
-              <span class="metric__value">3<span class="metric__unit">x</span></span>
-              <span class="metric__label">Más rápido en respuesta</span>
-            </div>
+          <div class="case-stat">
+            <strong>14h</strong>
+            <span>Ahorradas por día</span>
           </div>
-          <blockquote class="case-card__quote">
-            "Pasamos de tener 3 agentes respondiendo tickets a tener un solo coordinador supervisando la IA. El tiempo de respuesta bajó de horas a segundos."
-            <cite>— Directora de Operaciones</cite>
-          </blockquote>
-          <div class="case-card__bar">
-            <span class="case-card__bar-label">Reducción de carga operativa</span>
-            <div class="case-card__bar-track">
-              <div class="case-card__bar-fill" data-width="87"></div>
-            </div>
-            <span class="case-card__bar-pct">87%</span>
+          <div class="case-stat">
+            <strong>3x</strong>
+            <span>Velocidad de respuesta</span>
           </div>
         </div>
-
-        <!-- Caso 2 -->
-        <div class="case-card case-card--featured" data-delay="120">
-          <div class="case-card__header">
-            <div class="case-card__industry">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg>
-              Servicios Financieros
-            </div>
-            <span class="case-card__tag case-card__tag--green">Aumento de ventas</span>
-          </div>
-          <h3 class="case-card__title">Motor de recomendación inteligente para fintech</h3>
-          <p class="case-card__desc">Desarrollamos un sistema de IA que analiza el perfil financiero de cada usuario en tiempo real y recomienda productos con alta probabilidad de conversión.</p>
-          <div class="case-card__metrics">
-            <div class="metric">
-              <span class="metric__value">+64<span class="metric__unit">%</span></span>
-              <span class="metric__label">Aumento en conversión</span>
-            </div>
-            <div class="metric">
-              <span class="metric__value">+$2.1<span class="metric__unit">M</span></span>
-              <span class="metric__label">Revenue adicional / año</span>
-            </div>
-            <div class="metric">
-              <span class="metric__value">41<span class="metric__unit">%</span></span>
-              <span class="metric__label">Menos churn de clientes</span>
-            </div>
-          </div>
-          <blockquote class="case-card__quote">
-            "El sistema predice qué producto necesita cada cliente antes de que él mismo lo sepa. Nuestras ventas cruzadas se dispararon en el primer trimestre."
-            <cite>— VP de Producto</cite>
-          </blockquote>
-          <div class="case-card__bar">
-            <span class="case-card__bar-label">Incremento en tasa de conversión</span>
-            <div class="case-card__bar-track">
-              <div class="case-card__bar-fill case-card__bar-fill--green" data-width="64"></div>
-            </div>
-            <span class="case-card__bar-pct">+64%</span>
-          </div>
+        <blockquote>"Pasamos de 3 agentes respondiendo tickets a un solo coordinador supervisando la IA."<cite>— Directora de Operaciones</cite></blockquote>
+        <div class="case-card__bar">
+          <div class="case-card__bar-fill" data-w="87" style="background:var(--blue)"></div>
+          <span>87%</span>
         </div>
-
-        <!-- Caso 3 -->
-        <div class="case-card" data-delay="240">
-          <div class="case-card__header">
-            <div class="case-card__industry">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"/><path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/></svg>
-              Manufactura &amp; Logística
-            </div>
-            <span class="case-card__tag case-card__tag--purple">Automatización</span>
-          </div>
-          <h3 class="case-card__title">Pipeline de datos autónomo para cadena de suministro</h3>
-          <p class="case-card__desc">Reemplazamos 12 procesos manuales de generación de reportes con un pipeline de IA que consolida datos de 6 sistemas y genera alertas predictivas de inventario.</p>
-          <div class="case-card__metrics">
-            <div class="metric">
-              <span class="metric__value">12<span class="metric__unit"></span></span>
-              <span class="metric__label">Procesos eliminados</span>
-            </div>
-            <div class="metric">
-              <span class="metric__value">98<span class="metric__unit">%</span></span>
-              <span class="metric__label">Precisión en predicciones</span>
-            </div>
-            <div class="metric">
-              <span class="metric__value">$340<span class="metric__unit">K</span></span>
-              <span class="metric__label">Ahorrados en inventario</span>
-            </div>
-          </div>
-          <blockquote class="case-card__quote">
-            "Antes tardábamos 3 días en cerrar el reporte mensual. Ahora se genera solo, en tiempo real, con alertas que evitan quiebres de stock antes de que ocurran."
-            <cite>— Gerente de Supply Chain</cite>
-          </blockquote>
-          <div class="case-card__bar">
-            <span class="case-card__bar-label">Precisión del modelo predictivo</span>
-            <div class="case-card__bar-track">
-              <div class="case-card__bar-fill case-card__bar-fill--purple" data-width="98"></div>
-            </div>
-            <span class="case-card__bar-pct">98%</span>
-          </div>
-        </div>
-
       </div>
 
-      <div class="cases__cta">
-        <p>¿Listo para ser el próximo caso de éxito?</p>
-        <a href="#contacto" class="btn btn--primary">Hablemos de tu proyecto</a>
+      <div class="case-card case-card--featured reveal">
+        <div class="case-card__top">
+          <div class="case-card__industry">Servicios Financieros</div>
+          <span class="badge badge--amber">Aumento de ventas</span>
+        </div>
+        <h3>Motor de recomendación para fintech</h3>
+        <p>Sistema de IA que analiza el perfil financiero de cada usuario en tiempo real y recomienda productos con alta probabilidad de conversión.</p>
+        <div class="case-card__stats">
+          <div class="case-stat">
+            <strong>+64%</strong>
+            <span>Conversión</span>
+          </div>
+          <div class="case-stat">
+            <strong>$2.1M</strong>
+            <span>Revenue adicional/año</span>
+          </div>
+          <div class="case-stat">
+            <strong>41%</strong>
+            <span>Menos churn</span>
+          </div>
+        </div>
+        <blockquote>"El sistema predice qué producto necesita cada cliente antes de que él mismo lo sepa."<cite>— VP de Producto</cite></blockquote>
+        <div class="case-card__bar">
+          <div class="case-card__bar-fill" data-w="64" style="background:var(--amber)"></div>
+          <span>+64%</span>
+        </div>
       </div>
+
+      <div class="case-card reveal">
+        <div class="case-card__top">
+          <div class="case-card__industry">Manufactura &amp; Logística</div>
+          <span class="badge badge--green">Automatización</span>
+        </div>
+        <h3>Pipeline de datos autónomo</h3>
+        <p>Reemplazamos 12 procesos manuales con un pipeline de IA que consolida datos de 6 sistemas y genera alertas predictivas de inventario.</p>
+        <div class="case-card__stats">
+          <div class="case-stat">
+            <strong>12</strong>
+            <span>Procesos eliminados</span>
+          </div>
+          <div class="case-stat">
+            <strong>98%</strong>
+            <span>Precisión predictiva</span>
+          </div>
+          <div class="case-stat">
+            <strong>$340K</strong>
+            <span>Ahorro en inventario</span>
+          </div>
+        </div>
+        <blockquote>"Antes tardábamos 3 días en cerrar el reporte mensual. Ahora se genera solo, en tiempo real."<cite>— Gerente de Supply Chain</cite></blockquote>
+        <div class="case-card__bar">
+          <div class="case-card__bar-fill" data-w="98" style="background:#10B981"></div>
+          <span>98%</span>
+        </div>
+      </div>
+
     </div>
-  </section>
+    <div class="cases__cta">
+      <p>¿Listo para ser el próximo caso de éxito?</p>
+      <a href="#contacto" class="btn btn--primary">Hablemos de tu proyecto</a>
+    </div>
+  </div>
+</section>
 
-  <!-- POR QUÉ -->
-  <section class="why" id="por-que">
-    <div class="container">
-      <div class="why__inner">
-        <div class="why__left">
-          <p class="section-tag">Nuestra ventaja</p>
-          <h2 class="section-title">¿Por qué elegir<br /><span class="gradient-text">AMN Systems</span>?</h2>
-          <p class="section-sub left">No somos una agencia genérica. Somos un equipo de ingenieros e investigadores en IA que entienden tu negocio tan profundamente como entienden los modelos que construimos.</p>
-          <a href="#contacto" class="btn btn--primary">Empezar ahora</a>
-        </div>
-        <div class="why__right">
-          <div class="why__item" data-delay="0">
-            <div class="why__icon">
-              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4L4 10v12l12 6 12-6V10L16 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <h4>Expertise real en IA</h4>
-              <p>Nuestro equipo tiene experiencia directa en machine learning, NLP y sistemas de producción a escala.</p>
-            </div>
-          </div>
-          <div class="why__item" data-delay="100">
-            <div class="why__icon">
-              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/><path d="M10 16l4 4 8-8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <h4>Resultados medibles</h4>
-              <p>Cada proyecto tiene KPIs definidos. Entregamos valor medible, no promesas vacías.</p>
-            </div>
-          </div>
-          <div class="why__item" data-delay="200">
-            <div class="why__icon">
-              <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <div>
-              <h4>Implementación ágil</h4>
-              <p>Metodología iterativa que permite ver avances desde la primera semana, no meses después.</p>
-            </div>
-          </div>
-          <div class="why__item" data-delay="300">
-            <div class="why__icon">
-              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4c6.627 0 12 5.373 12 12s-5.373 12-12 12S4 22.627 4 16 9.373 4 16 4z" stroke="currentColor" stroke-width="1.5"/><path d="M12 16s1 3 4 3 4-3 4-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="13" r="1.5" fill="currentColor"/><circle cx="20" cy="13" r="1.5" fill="currentColor"/></svg>
-            </div>
-            <div>
-              <h4>Soporte continuo</h4>
-              <p>Acompañamos el crecimiento de tu solución. Mantenimiento, mejoras y soporte post-lanzamiento incluidos.</p>
-            </div>
-          </div>
-          <div class="why__item" data-delay="400">
-            <div class="why__icon">
-              <svg viewBox="0 0 32 32" fill="none"><path d="M8 20l4-8 4 6 3-4 5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
-            </div>
-            <div>
-              <h4>Escalabilidad garantizada</h4>
-              <p>Arquitecturas cloud-native preparadas para crecer con tu empresa sin límites.</p>
-            </div>
-          </div>
-          <div class="why__item" data-delay="500">
-            <div class="why__icon">
-              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l2.5 7.5H26l-6.5 4.5 2.5 7.5L16 19l-6 4.5 2.5-7.5L6 11.5h7.5L16 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-            </div>
-            <div>
-              <h4>Soluciones premium</h4>
-              <p>No usamos plantillas. Cada solución es diseñada desde cero para maximizar el impacto en tu industria.</p>
-            </div>
-          </div>
+<!-- TESTIMONIAL -->
+<section class="testimonial">
+  <div class="container">
+    <div class="testimonial__card">
+      <div class="testimonial__stars">★★★★★</div>
+      <blockquote class="testimonial__quote">
+        "AMN Systems no solo entregó una solución técnica impresionante — transformaron la forma en que operamos. El ROI fue visible desde el primer mes. Son el equipo de IA más serio con el que hemos trabajado."
+      </blockquote>
+      <div class="testimonial__author">
+        <div class="testimonial__avatar">JR</div>
+        <div>
+          <p class="testimonial__name">José Rodríguez</p>
+          <p class="testimonial__role">CEO, TechRetail Group</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="container">
-      <div class="contact__inner">
-        <div class="contact__left">
-          <p class="section-tag">Contáctanos</p>
-          <h2 class="section-title">Empecemos a construir<br /><span class="gradient-text">tu futuro con IA</span></h2>
-          <p class="section-sub left">Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas con un plan de acción personalizado.</p>
-          <div class="contact__info">
-            <div class="contact__detail">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" stroke="currentColor" stroke-width="1.5"/><path d="M2 6l10 7 10-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-              <span>lazarolozano@amnsystems.com</span>
-            </div>
-            <div class="contact__detail">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.96 2.18 2 2 0 012.95.01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/></svg>
-              <span>787-509-3844</span>
-            </div>
-            <div class="contact__detail">
-              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
-              <span>Puerto Rico</span>
-            </div>
-          </div>
-        </div>
-        <div class="contact__right">
-          <form class="form" id="contactForm">
-            <div class="form__row">
-              <div class="form__group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
-              </div>
-              <div class="form__group">
-                <label for="empresa">Empresa</label>
-                <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
-              </div>
-            </div>
-            <div class="form__group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="tu@empresa.com" required />
-            </div>
-            <div class="form__group">
-              <label for="servicio">Servicio de interés</label>
-              <select id="servicio" name="servicio">
-                <option value="">Selecciona un servicio</option>
-                <option>Automatización Inteligente</option>
-                <option>Consultoría en IA</option>
-                <option>Desarrollo de Soluciones IA</option>
-                <option>Integración Empresarial</option>
-                <option>Análisis de Datos con IA</option>
-                <option>IA Generativa para Empresas</option>
-                <option>Otro</option>
-              </select>
-            </div>
-            <div class="form__group">
-              <label for="mensaje">¿En qué podemos ayudarte?</label>
-              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto o desafío..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full">
-              <span class="btn__text">Enviar mensaje</span>
-              <span class="btn__loader" hidden>
-                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.3"/><path d="M12 2a10 10 0 0110 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </span>
-            </button>
-            <p class="form__success" id="formSuccess" hidden>
-              ✓ Mensaje enviado con éxito. Te contactaremos pronto.
-            </p>
-          </form>
-        </div>
+<!-- POR QUÉ -->
+<section class="why section" id="por-que">
+  <div class="container">
+    <div class="why__inner">
+      <div class="why__left">
+        <div class="section-label">Nuestra ventaja</div>
+        <h2 class="section-title">¿Por qué<br/><span class="text-blue">AMN Systems</span>?</h2>
+        <p class="section-sub why__sub">No somos una agencia genérica. Somos ingenieros e investigadores en IA que entienden tu negocio tan profundamente como los modelos que construimos.</p>
+        <a href="#contacto" class="btn btn--amber">Empezar ahora</a>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <a href="#" class="nav__logo">AMN<span>Systems</span></a>
-          <p>Transformando empresas con inteligencia artificial de alto impacto.</p>
-        </div>
-        <div class="footer__links">
-          <div>
-            <h5>Servicios</h5>
-            <a href="#servicios">Automatización</a>
-            <a href="#servicios">Consultoría IA</a>
-            <a href="#servicios">Desarrollo IA</a>
-            <a href="#servicios">Integración</a>
+      <div class="why__right">
+        <div class="why-item reveal">
+          <div class="why-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
           </div>
           <div>
-            <h5>Empresa</h5>
-            <a href="#">Sobre nosotros</a>
-            <a href="#">Casos de éxito</a>
-            <a href="#">Blog</a>
-            <a href="#contacto">Contacto</a>
+            <h4>Expertise real en IA</h4>
+            <p>Experiencia directa en machine learning, NLP y sistemas de producción a escala. Sin intermediarios, sin plantillas.</p>
           </div>
         </div>
-      </div>
-      <div class="footer__bottom">
-        <p>© 2026 AMN Systems. Todos los derechos reservados.</p>
-        <div class="footer__socials">
-          <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="#" aria-label="Twitter / X">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="#" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.026 2.747-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-          </a>
+        <div class="why-item reveal">
+          <div class="why-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <h4>Resultados medibles</h4>
+            <p>Cada proyecto tiene KPIs definidos desde el día uno. Entregamos valor medible, no promesas vacías.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h4>Implementación ágil</h4>
+            <p>Resultados visibles desde la primera semana. Metodología iterativa, no promesas de meses después.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+          </div>
+          <div>
+            <h4>Escalabilidad garantizada</h4>
+            <p>Arquitecturas cloud-native que crecen con tu empresa. Sin límites técnicos, sin deuda técnica.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          </div>
+          <div>
+            <h4>Seguridad y privacidad</h4>
+            <p>Desplegamos modelos en infraestructura privada. Tus datos nunca salen de tu control. GDPR y ISO compliant.</p>
+          </div>
+        </div>
+        <div class="why-item reveal">
+          <div class="why-item__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <div>
+            <h4>Soporte continuo</h4>
+            <p>Acompañamos el crecimiento de tu solución. Mantenimiento, mejoras y soporte post-lanzamiento incluidos.</p>
+          </div>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- FLOAT STACK: chat + whatsapp -->
-  <div class="float-stack">
-
-    <!-- CHAT WIDGET -->
-    <div class="chat-widget" id="chatWidget">
-
-      <!-- Panel (abre hacia arriba) -->
-      <div class="chat-panel" id="chatPanel" aria-hidden="true">
-
-        <!-- Header -->
-        <div class="chat-header">
-          <div class="chat-header__avatar">
-            <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="rgba(30,144,255,0.2)"/><path d="M10 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#3FAAFF" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="11" r="3" stroke="#3FAAFF" stroke-width="1.5"/><circle cx="24" cy="9" r="2" fill="#1E90FF" opacity="0.6"/><circle cx="8" cy="22" r="1.5" fill="#3FAAFF" opacity="0.5"/></svg>
-            <span class="chat-header__status"></span>
+<!-- CONTACTO -->
+<section class="contact section" id="contacto">
+  <div class="container">
+    <div class="contact__inner">
+      <div class="contact__left">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Empecemos a construir<br/><span class="text-blue">tu futuro con IA</span></h2>
+        <p class="section-sub">Cuéntanos sobre tu proyecto. Te respondemos en menos de 24 horas con un plan de acción personalizado.</p>
+        <div class="contact__details">
+          <div class="contact__detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:lazarolozano@amnsystems.com">lazarolozano@amnsystems.com</a>
           </div>
-          <div class="chat-header__info">
-            <p class="chat-header__name">AIDA</p>
-            <p class="chat-header__sub">Asistente IA · AMN Systems</p>
+          <div class="contact__detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:+17875093844">787-509-3844</a>
           </div>
-          <button class="chat-header__close" id="chatClose" aria-label="Cerrar">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-          </button>
+          <div class="contact__detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Puerto Rico</span>
+          </div>
         </div>
-
-        <!-- Messages -->
-        <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
-
-        <!-- Quick replies -->
-        <div class="chat-quick" id="chatQuick">
-          <button data-q="¿Qué servicios ofrecen?">Servicios</button>
-          <button data-q="¿Cuánto cuesta?">Precios</button>
-          <button data-q="¿Cómo empiezo?">¿Cómo empiezo?</button>
-          <button data-q="¿Trabajan con empresas pequeñas?">PyMEs</button>
-        </div>
-
-        <!-- Input -->
-        <form class="chat-input" id="chatForm" autocomplete="off">
-          <input
-            type="text"
-            id="chatInput"
-            placeholder="Escribe tu pregunta..."
-            maxlength="300"
-            aria-label="Mensaje"
-          />
-          <button type="submit" aria-label="Enviar">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="contact__right">
+        <form class="form" id="contactForm">
+          <div class="form__row">
+            <div class="form__field">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="form__field">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Tu empresa" />
+            </div>
+          </div>
+          <div class="form__field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required />
+          </div>
+          <div class="form__field">
+            <label for="servicio">Servicio de interés</label>
+            <select id="servicio" name="servicio">
+              <option value="">Selecciona un servicio</option>
+              <option>Automatización Inteligente</option>
+              <option>Consultoría en IA</option>
+              <option>Desarrollo de Soluciones IA</option>
+              <option>Integración Empresarial</option>
+              <option>Análisis de Datos con IA</option>
+              <option>IA Generativa para Empresas</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form__field">
+            <label for="mensaje">¿En qué podemos ayudarte?</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--amber btn--full" id="submitBtn">
+            <span id="btnText">Enviar mensaje</span>
+            <span id="btnLoader" hidden>
+              <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.3"/><path d="M12 2a10 10 0 0110 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
           </button>
+          <p id="formSuccess" class="form__success" hidden>✓ Mensaje enviado. Te contactamos pronto.</p>
         </form>
-
       </div>
-
-      <!-- Toggle button -->
-      <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat">
-        <span class="chat-toggle__icon chat-toggle__icon--open">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="8" cy="10" r="1" fill="currentColor"/><circle cx="12" cy="10" r="1" fill="currentColor"/><circle cx="16" cy="10" r="1" fill="currentColor"/></svg>
-        </span>
-        <span class="chat-toggle__icon chat-toggle__icon--close" hidden>
-          <svg viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-        </span>
-        <span class="chat-toggle__label">Chatea en vivo con nosotros</span>
-        <span class="chat-toggle__dot" id="chatDot"></span>
-      </button>
-
     </div>
+  </div>
+</section>
 
-    <!-- WHATSAPP -->
-    <a
-      href="https://wa.me/17875093844"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="wa-float"
-      aria-label="Chatea con nosotros por WhatsApp"
-    >
-      <div class="wa-float__ring"></div>
-      <svg class="wa-float__icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 2C8.268 2 2 8.268 2 16c0 2.434.655 4.72 1.8 6.695L2 30l7.522-1.772A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
-        <path d="M23.5 19.77c-.3-.15-1.77-.873-2.044-.972-.273-.099-.472-.148-.671.149-.198.297-.769.972-.942 1.171-.174.198-.347.223-.644.074-.298-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.76-1.653-2.058-.173-.297-.018-.457.13-.605.133-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.074-.15-.67-1.617-.918-2.213-.242-.581-.487-.502-.671-.511-.173-.009-.372-.011-.57-.011-.199 0-.52.074-.793.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.307 1.263.49 1.694.627.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#25D366"/>
-      </svg>
-      <span class="wa-float__label">Chatea con nosotros</span>
-    </a>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="footer__logo">AMN<span>Systems</span></div>
+        <p>Transformando empresas con inteligencia artificial de alto impacto desde Puerto Rico.</p>
+      </div>
+      <div class="footer__nav">
+        <div>
+          <h5>Servicios</h5>
+          <a href="#servicios">Automatización</a>
+          <a href="#servicios">Consultoría IA</a>
+          <a href="#servicios">Desarrollo IA</a>
+          <a href="#servicios">Integración</a>
+        </div>
+        <div>
+          <h5>Empresa</h5>
+          <a href="#por-que">Sobre nosotros</a>
+          <a href="#casos">Casos de éxito</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 AMN Systems. Todos los derechos reservados.</p>
+      <div class="footer__socials">
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
 
+<!-- FLOAT STACK: pointer-events:none on container, auto on buttons -->
+<div class="float-stack">
+
+  <!-- CHAT WIDGET -->
+  <div class="chat-widget" id="chatWidget">
+    <!-- Panel: position:absolute so it never inflates float-stack height -->
+    <div class="chat-panel" id="chatPanel" aria-hidden="true">
+      <div class="chat-header">
+        <div class="chat-header__avatar">
+          <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" fill="rgba(59,130,246,0.2)"/><path d="M10 20c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="11" r="3" stroke="#60A5FA" stroke-width="1.5"/></svg>
+          <span class="chat-header__status"></span>
+        </div>
+        <div class="chat-header__info">
+          <p class="chat-header__name">AIDA</p>
+          <p class="chat-header__sub">Asistente IA · AMN Systems</p>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Cerrar chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite"></div>
+      <div class="chat-quick" id="chatQuick">
+        <button data-q="¿Qué servicios ofrecen?">Servicios</button>
+        <button data-q="¿Cuánto cuesta?">Precios</button>
+        <button data-q="¿Cómo empiezo?">¿Cómo empiezo?</button>
+        <button data-q="¿Trabajan con empresas pequeñas?">PyMEs</button>
+      </div>
+      <form class="chat-form" id="chatForm" autocomplete="off">
+        <input type="text" id="chatInput" placeholder="Escribe tu pregunta..." maxlength="300" aria-label="Mensaje"/>
+        <button type="submit" aria-label="Enviar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+    <!-- Toggle: pointer-events:auto -->
+    <button class="chat-toggle" id="chatToggle" aria-label="Abrir asistente">
+      <span class="chat-toggle__open">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+      </span>
+      <span class="chat-toggle__close" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </span>
+      <span class="chat-toggle__label">Chatea en vivo con nosotros</span>
+      <span class="chat-toggle__dot" id="chatDot"></span>
+    </button>
   </div>
 
-  <script src="script.js"></script>
+  <!-- WHATSAPP: pointer-events:auto -->
+  <a href="https://wa.me/17875093844" target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="WhatsApp">
+    <div class="wa-btn__ring"></div>
+    <svg viewBox="0 0 32 32" fill="none">
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.434.655 4.72 1.8 6.695L2 30l7.522-1.772A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
+      <path d="M23.5 19.77c-.3-.15-1.77-.873-2.044-.972-.273-.099-.472-.148-.671.149-.198.297-.769.972-.942 1.171-.174.198-.347.223-.644.074-.298-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.76-1.653-2.058-.173-.297-.018-.457.13-.605.133-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.52-.074-.15-.67-1.617-.918-2.213-.242-.581-.487-.502-.671-.511-.173-.009-.372-.011-.57-.011-.199 0-.52.074-.793.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.307 1.263.49 1.694.627.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#25D366"/>
+    </svg>
+    <span>Chatea por WhatsApp</span>
+  </a>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

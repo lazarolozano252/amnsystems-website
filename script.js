@@ -9,11 +9,10 @@
   document.body.classList.add('loading');
 
   // Animate progress bar over ~2.4 s
-  const DURATION   = 2400;   // ms until bar hits 100 %
-  const HIDE_DELAY = 300;    // ms after 100 % before fade-out starts
+  const DURATION   = 2400;   // ms until bar hits 100%
+  const HIDE_DELAY = 300;    // ms after 100% before fade-out starts
   const start      = performance.now();
 
-  // Ease-out curve so it feels fast then slows near the end
   function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
 
   function tick(now) {
@@ -24,16 +23,14 @@
     if (progress < 1) {
       requestAnimationFrame(tick);
     } else {
-      // Bar full → short pause → fade out → remove from DOM entirely
       setTimeout(() => {
         loader.classList.add('hidden');
         document.body.classList.remove('loading');
-        // Remove loader from DOM after fade — belt-and-suspenders:
-        // transitionend fires normally, timeout is backup for iOS Safari
-        // where transitionend can be skipped when tab is in background.
+        // Belt-and-suspenders: transitionend fires normally,
+        // setTimeout is backup for iOS Safari tab-in-background.
         const hideFn = () => { loader.style.display = 'none'; };
         loader.addEventListener('transitionend', hideFn, { once: true });
-        setTimeout(hideFn, 800); // 0.7s transition + 100ms buffer
+        setTimeout(hideFn, 800);
       }, HIDE_DELAY);
     }
   }
@@ -44,13 +41,13 @@
 /* =====================
    NAV — scroll effect & burger
    ===================== */
-const navbar   = document.getElementById('navbar');
-const burger   = document.getElementById('burger');
-const mobile   = document.getElementById('mobileMenu');
+const navbar = document.getElementById('navbar');
+const burger = document.getElementById('burger');
+const mobile = document.getElementById('mobileMenu');
 
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 10);
-});
+}, { passive: true });
 
 burger.addEventListener('click', () => {
   mobile.classList.toggle('open');
@@ -61,13 +58,11 @@ mobile.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => mobile.classList.remove('open'));
 });
 
-/* Canvas de partículas eliminado — fondo manejado por CSS */
-
 /* =====================
    COUNTER ANIMATION
    ===================== */
-function animateCounters() {
-  document.querySelectorAll('.stat__number').forEach(el => {
+function animateCounters(selector) {
+  document.querySelectorAll(selector).forEach(el => {
     const target   = +el.dataset.target;
     const duration = 1800;
     const start    = performance.now();
@@ -83,14 +78,26 @@ function animateCounters() {
   });
 }
 
-// trigger counters when hero is visible
+// Hero stats — trigger when hero comes into view
 const heroObserver = new IntersectionObserver(entries => {
   if (entries[0].isIntersecting) {
-    animateCounters();
+    animateCounters('.hero__stat-n');
     heroObserver.disconnect();
   }
-}, { threshold: 0.4 });
+}, { threshold: 0.3 });
 heroObserver.observe(document.querySelector('.hero'));
+
+// Metrics strip — trigger when the metrics section comes into view
+const metricsSection = document.querySelector('.metrics');
+if (metricsSection) {
+  const metricsObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      animateCounters('.metrics__n');
+      metricsObserver.disconnect();
+    }
+  }, { threshold: 0.4 });
+  metricsObserver.observe(metricsSection);
+}
 
 /* =====================
    SCROLL REVEAL
@@ -98,20 +105,19 @@ heroObserver.observe(document.querySelector('.hero'));
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
-
     const el    = entry.target;
     const delay = +(el.dataset.delay || 0);
-
     setTimeout(() => el.classList.add('visible'), delay);
     revealObserver.unobserve(el);
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.card, .why__item').forEach(el => {
+// Observe service cards and why-items
+document.querySelectorAll('.svc-card, .why-item').forEach(el => {
   revealObserver.observe(el);
 });
 
-/* ── Case cards: reveal + animate progress bars ── */
+/* Case cards: reveal + animate progress bars */
 const caseObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
@@ -123,7 +129,7 @@ const caseObserver = new IntersectionObserver(entries => {
       // Animate bar after card fades in
       setTimeout(() => {
         const fill = card.querySelector('.case-card__bar-fill');
-        if (fill) fill.style.width = fill.dataset.width + '%';
+        if (fill) fill.style.width = fill.dataset.w + '%';
       }, 300);
     }, delay);
 
@@ -133,14 +139,14 @@ const caseObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.case-card').forEach(el => caseObserver.observe(el));
 
-/* Anchor links: scroll nativo del browser — sin JS que intercepte */
+/* Anchor links: native browser scroll — no JS interception */
 
 /* =====================
    CONTACT FORM
    ===================== */
 const form        = document.getElementById('contactForm');
-const btnText     = form.querySelector('.btn__text');
-const btnLoader   = form.querySelector('.btn__loader');
+const btnText     = document.getElementById('btnText');
+const btnLoader   = document.getElementById('btnLoader');
 const formSuccess = document.getElementById('formSuccess');
 
 form.addEventListener('submit', async e => {
@@ -149,14 +155,14 @@ form.addEventListener('submit', async e => {
   // Loading state
   btnText.hidden   = true;
   btnLoader.hidden = false;
-  form.querySelector('button').disabled = true;
+  form.querySelector('button[type="submit"]').disabled = true;
 
-  // Simulate async submission (replace with your real endpoint)
+  // Simulate async submission (replace with real endpoint)
   await new Promise(r => setTimeout(r, 1600));
 
   btnText.hidden   = false;
   btnLoader.hidden = true;
-  form.querySelector('button').disabled = false;
+  form.querySelector('button[type="submit"]').disabled = false;
 
   formSuccess.hidden = false;
   form.reset();
@@ -178,11 +184,11 @@ form.addEventListener('submit', async e => {
   const input    = document.getElementById('chatInput');
   const quick    = document.getElementById('chatQuick');
   const dot      = document.getElementById('chatDot');
-  const iconOpen = toggle.querySelector('.chat-toggle__icon--open');
-  const iconClose= toggle.querySelector('.chat-toggle__icon--close');
+  const iconOpen = toggle.querySelector('.chat-toggle__open');
+  const iconClose= toggle.querySelector('.chat-toggle__close');
 
   let isOpen    = false;
-  let isBusy    = false;   // prevents double-send while bot is typing
+  let isBusy    = false;
   let firstOpen = true;
 
   // ── Knowledge base ─────────────────────────────────────
@@ -222,7 +228,7 @@ form.addEventListener('submit', async e => {
       answer: `Nuestros plazos típicos:\n\n• <strong>Chatbot básico</strong>: 1–2 semanas\n• <strong>Automatización de proceso</strong>: 2–4 semanas\n• <strong>Solución personalizada</strong>: 4–8 semanas\n• <strong>Consultoría</strong>: entregamos la hoja de ruta en 1 semana\n\nUsamos metodología ágil — ves avances reales desde el primer sprint, no meses después.`,
     },
     {
-      keys: ['seguridad','dato','privacidad','gdpr','confidencial','seguro'],
+      keys: ['seguridad','privacidad','gdpr','confidencial','seguro'],
       answer: `La seguridad es prioridad en AMN Systems:\n\n• 🔒 Podemos desplegar modelos en <strong>infraestructura privada</strong> (tus datos nunca salen)\n• 📋 Cumplimiento con GDPR, HIPAA e ISO 27001\n• 🔐 Contratos de confidencialidad (NDA) desde el primer día\n• ☁️ Opciones cloud (AWS, GCP, Azure) o on-premise\n\n¿Tienes requerimientos específicos de cumplimiento?`,
     },
     {
@@ -303,7 +309,6 @@ form.addEventListener('submit', async e => {
   }
 
   function formatAnswer(text) {
-    // Newlines → <br>, keep bold tags
     return text.replace(/\n/g, '<br>');
   }
 
@@ -313,16 +318,13 @@ form.addEventListener('submit', async e => {
     isBusy = true;
     quick.style.display = 'none';
 
-    // User bubble
     appendMsg({ role: 'user', html: text.replace(/</g, '&lt;') });
     input.value = '';
 
-    // Typing delay proportional to answer length
     const answer = findAnswer(text);
     const delay  = 700 + Math.min(answer.length * 1.5, 1600);
 
     const typingEl = showTyping();
-
     await new Promise(r => setTimeout(r, delay));
     typingEl.remove();
 
@@ -341,7 +343,6 @@ form.addEventListener('submit', async e => {
 
     if (firstOpen) {
       firstOpen = false;
-      // Greeting after short delay
       setTimeout(() => {
         appendMsg({
           role: 'bot',
@@ -361,7 +362,7 @@ form.addEventListener('submit', async e => {
     iconClose.hidden = true;
   }
 
-  // Show dot after 4 s if user hasn't opened chat
+  // Show notification dot after 4s if user hasn't opened chat
   setTimeout(() => { if (!isOpen) dot.classList.add('visible'); }, 4000);
 
   // ── Events ──────────────────────────────────────────────
@@ -377,7 +378,6 @@ form.addEventListener('submit', async e => {
     btn.addEventListener('click', () => sendMessage(btn.dataset.q));
   });
 
-  // Close on Escape
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && isOpen) closePanel();
   });
@@ -388,12 +388,12 @@ form.addEventListener('submit', async e => {
    CARD TILT — subtle 3D (desktop/mouse only)
    ===================== */
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  document.querySelectorAll('.card').forEach(card => {
+  document.querySelectorAll('.svc-card').forEach(card => {
     card.addEventListener('mousemove', e => {
       const rect = card.getBoundingClientRect();
       const x    = (e.clientX - rect.left) / rect.width  - 0.5;
       const y    = (e.clientY - rect.top)  / rect.height - 0.5;
-      card.style.transform = `translateY(-4px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg)`;
+      card.style.transform = `translateY(-4px) rotateY(${x * 4}deg) rotateX(${-y * 4}deg)`;
     });
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
