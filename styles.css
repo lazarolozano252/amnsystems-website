@@ -1527,8 +1527,9 @@ input, select, textarea { font: inherit; }
   .chat-toggle__label { display: none; }
   .chat-toggle { padding: 13px; border-radius: 50%; }
   .chat-panel { width: calc(100vw - 44px); }
-  /* Services grid: 1 col on mobile */
-  .svc-grid { grid-template-columns: 1fr; }
+  /* Services grid: 1 col on mobile, override any inline grid-column spans */
+  .svc-grid { grid-template-columns: 1fr !important; }
+  .svc-grid > * { grid-column: auto !important; width: 100%; }
   /* iForm mobile */
   .iForm__fields { grid-template-columns: 1fr; }
   .iForm { padding: 0 4px; }
